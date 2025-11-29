@@ -1,12 +1,22 @@
 "use strict"
 
-const bpm = document.getElementById("bpm");
 const start = document.querySelector(".metronome__start");
-const synth = new Tone.Synth().toDestination(); //create a synth and connect it to the main output (your speakers)
+
+function startBasic () {
+    const bpm = document.getElementById("bpm");
+    const synth = new Tone.Synth().toDestination();
+    Tone.Transport.bpm.value = bpm.value;
+    const metroLoop = new Tone.Loop(
+        (time) => {
+            synth.triggerAttackRelease("C4", "8n", time);
+            console.log("click");
+        },"4n"
+    ).start(0);
+    Tone.Transport.start();
+}
 
 start.addEventListener("click", async (event) => {
     event.preventDefault();
     await Tone.start();
-    console.log(bpm.value);
-    synth.triggerAttackRelease("D4", "16n");
+    startBasic();
 });
