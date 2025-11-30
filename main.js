@@ -1,6 +1,6 @@
 "use strict"
 
-const start = document.querySelector(".metronome__start");
+const start = document.querySelector(".metalnome__start");
 
 function basicStart () {
     const bpm = document.getElementById("bpm");
@@ -20,11 +20,11 @@ function stop() {
     Tone.Transport.cancel(); // Clears all scheduled events
 }
 
-let metronomeOn = false;
+let metalnomeOn = false;
 start.addEventListener("click", async (event) => {
     event.preventDefault();
-    metronomeOn = !metronomeOn;
-    if (metronomeOn){
+    metalnomeOn = !metalnomeOn;
+    if (metalnomeOn){
         await Tone.start();
         basicStart();
     } else {
