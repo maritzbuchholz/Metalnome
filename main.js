@@ -1,6 +1,19 @@
 "use strict"
 
 const start = document.querySelector(".metalnome__start");
+let lastStamp = 0;
+
+function blink (time) {
+    const timer = document.querySelector(".metalnome__timer");
+    const interval = Tone.Time("16n").toSeconds() * 1000;
+    if (time - lastStamp >= interval) {
+        timer.style.visibility =
+            timer.style.visibility === "hidden" ? "visible" : "hidden";
+        lastStamp = time;
+    }
+    requestAnimationFrame(blink);
+}
+
 
 function basicStart () {
     const bpm = document.getElementById("bpm");
@@ -8,8 +21,8 @@ function basicStart () {
     Tone.Transport.bpm.value = bpm.value;
     const metroLoop = new Tone.Loop(
         (time) => {
-            synth.triggerAttackRelease("G#4", "8n", time);
-            console.log("click");
+            synth.triggerAttackRelease("G#4", "16n", time);
+            Tone.Draw.schedule(requestAnimationFrame(blink), time);
         },"8n"
     ).start(0);
     Tone.Transport.start();
