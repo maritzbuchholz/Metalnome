@@ -10,6 +10,7 @@ const grooveList = {
   motor: motorhead,
   slipknot: slipknot,
   breakdown: breakdown,
+  windmills: windmills,
 }
 
 //utilities
@@ -184,6 +185,41 @@ function breakdown() {
     },
     ["kick"],
     "16n"
+  ).start(0);
+  Tone.Transport.start();
+
+  const snare = new Tone.Sequence(
+    (time, note) => {
+      players.player(note).start(time);
+    },
+    ["snare"],
+    "1n"
+  ).start("2n");
+  Tone.Transport.start();
+}
+
+function windmills() {
+  const bpm = document.getElementById("bpm");
+  const synth = new Tone.Synth().toDestination();
+  Tone.Transport.bpm.value = bpm.value;
+  const timeKeeperCall = timeKeeper();
+
+  const cymbals = new Tone.Sequence(
+    (time, note) => {
+      players.player(note).start(time);
+    },
+    ["closedhh"],
+    "2n"
+  ).start(0);
+
+  const kick = new Tone.Sequence(
+    (time, note) => {
+      players.player(note).start(time);
+    },
+    ["kick", "kick", null, null, null, null, "kick", "kick",
+     null, null, null, null, null, null, null, null,
+    ],
+    "8n"
   ).start(0);
   Tone.Transport.start();
 
