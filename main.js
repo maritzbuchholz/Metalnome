@@ -3,6 +3,12 @@
 const start = document.querySelector(".metalnome__start");
 const blinker = document.querySelector(".metalnome__blinker");
 
+
+const grooveList = {
+  standard: standard,
+  blast: blastBeat,
+}
+
 // this function creates the visual time-keeper of a broken heart </3
 
 function blinkOn() {
@@ -26,9 +32,13 @@ function timeKeeper() {
   return () => seq.start(0);
 }
 
+// instruments
+
+
+
 //////////////////////////////////
 
-function basicStart() {
+function standard() {
   const bpm = document.getElementById("bpm");
   const synth = new Tone.Synth().toDestination();
   Tone.Transport.bpm.value = bpm.value;
@@ -67,11 +77,11 @@ function stop() {
 let metalnomeOn = false;
 start.addEventListener("click", async (event) => {
   event.preventDefault();
-  const blinker = document.querySelector(".metalnome__blinker");
+  const selectedGroove = document.querySelector(".metalnome__groove").value;
   await Tone.start(); //connects to the WebAudio API and enable AudioContext
   metalnomeOn = !metalnomeOn;
   if (metalnomeOn) {
-    blastBeat();
+    grooveList[selectedGroove]();
   } else {
     stop();
   }
