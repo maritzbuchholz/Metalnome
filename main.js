@@ -62,6 +62,8 @@ function stop() {
   blinkOff();
 }
 
+//////
+
 let metalnomeOn = false;
 start.addEventListener("click", async (event) => {
   event.preventDefault();
