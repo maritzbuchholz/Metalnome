@@ -154,7 +154,6 @@ function slipknot() {
     ["kick"],
     "16n"
   ).start(0);
-  Tone.Transport.start();
 
   const snare = new Tone.Sequence(
     (time, note) => {
@@ -187,7 +186,6 @@ function breakdown() {
     ["kick"],
     "16n"
   ).start(0);
-  Tone.Transport.start();
 
   const snare = new Tone.Sequence(
     (time, note) => {
@@ -222,7 +220,6 @@ function windmills() {
     ],
     "8n"
   ).start(0);
-  Tone.Transport.start();
 
   const snare = new Tone.Sequence(
     (time, note) => {
@@ -248,30 +245,22 @@ function faceripper() {
     "4n"
   ).start(0);
 
-  const kick = new Tone.Sequence(
+  const drum = new Tone.Sequence(
     (time, note) => {
       players.player(note).start(time);
     },
-    ["kick", null, null, "kick", null, null, "kick", null,
-     null, null, "kick", null, null, null, "kick", "kick",
-     "kick", null, null, "kick", null, null, "kick", null,
-     null, null, "kick", "kick", null, null, null, null,
-     "kick", null, null, "kick", null, null, "kick", null,
-     null, null, "kick", null, null, null, "kick", "kick",
-    "kick", null, null, "kick", null, null, "kick", null,
-     "kick", "kick", "kick", "kick", null, null, "kick", null,
+    [
+    "kick", null  , null  , "kick", "snare", null, "kick", null  ,
+    null  , null  , "kick", null  , "snare", null, "kick", "kick",
+    "kick", null  , null  , "kick", "snare", null, "kick", null  ,
+    null  , null  , "kick", "kick", "snare", null, null  , null  ,
+    "kick", null  , null  , "kick", "snare", null, "kick", null  ,
+    null  , null  , "kick", null  , "snare", null, "kick", "kick",
+    "kick", null  , null  , "kick", "snare", null, "kick", null  ,
+    "kick", "kick", "kick", "kick", "snare", null, "kick", null  ,
     ],
     "16n"
   ).start(0);
-  Tone.Transport.start();
-
-  const snare = new Tone.Sequence(
-    (time, note) => {
-      players.player(note).start(time);
-    },
-    ["snare"],
-    "2n"
-  ).start("4n");
   Tone.Transport.start();
 }
 
