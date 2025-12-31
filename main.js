@@ -1,6 +1,6 @@
 "use strict";
 
-const start = document.querySelector(".metalnome__start");
+const start = document.querySelector(".metalnome__button");
 const blinker = document.querySelector(".metalnome__blinker");
 
 
@@ -86,7 +86,8 @@ function blastBeat() {
     (time, note) => {
       players.player(note).start(time);
     },
-    ["crash", "closedhh", "closedhh", "closedhh", "closedhh", "closedhh", "closedhh", "closedhh"],
+    ["crash"   , "closedhh", "closedhh", "closedhh",
+     "closedhh", "closedhh", "closedhh", "closedhh"],
     "8n"
   ).start(0);
 

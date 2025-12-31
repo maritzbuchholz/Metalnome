@@ -1,5 +1,17 @@
 $trasition-time: 2s;
 
+@mixin tablet {
+  @media screen and (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
 @keyframes flash {
   to {
     opacity: 0;
@@ -53,5 +65,44 @@ body {
     position: absolute;
     width: inherit;
     height: auto;
+  }
+  &__button{
+    border: red 1px solid;
+    border-radius: 5px; 
+  }
+  &__input-wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__bpm {
+    font-family: "Science Gothic", sans-serif;
+    width: 60%;
+    padding-left: 4px;
+    box-sizing: border-box;
+    border: red 1px solid;
+    border-radius: 5px;
+    background-color: black;
+    color: red;
+    appearance: none;
+  }
+  &__bpm::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+
+  }
+  &__bpm::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+
+  }
+  &__groove{
+    font-family: "Science Gothic", sans-serif;
+    width: 60%;
+    padding-left: 1px;
+    box-sizing: border-box;
+    border: red 1px solid;
+    border-radius: 5px;
+    background-color: black;
+    color: red;
   }
 }

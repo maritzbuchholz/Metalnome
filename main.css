@@ -49,4 +49,43 @@ body {
   position: absolute;
   width: inherit;
   height: auto;
+}
+.metalnome__button {
+  border: red 1px solid;
+  border-radius: 5px;
+}
+.metalnome__input-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.metalnome__bpm {
+  font-family: "Science Gothic", sans-serif;
+  width: 60%;
+  padding-left: 4px;
+  box-sizing: border-box;
+  border: red 1px solid;
+  border-radius: 5px;
+  background-color: black;
+  color: red;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.metalnome__bpm::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.metalnome__bpm::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.metalnome__groove {
+  font-family: "Science Gothic", sans-serif;
+  width: 60%;
+  padding-left: 1px;
+  box-sizing: border-box;
+  border: red 1px solid;
+  border-radius: 5px;
+  background-color: black;
+  color: red;
 }/*# sourceMappingURL=main.css.map */
