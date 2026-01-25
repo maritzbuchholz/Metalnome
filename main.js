@@ -306,13 +306,14 @@ function faceripper() {
 
 let metalnomeOn = false;
 start.addEventListener(triggerEvent, (event) => {
-  event.preventDefault();
+  // event.preventDefault() removed to allow native audio unlock
   
   const selectedGroove = document.querySelector(".metalnome__groove").value;
   
   // 1. UNLOCK IMMEDIATELY (Synchronous)
   if (!metalnomeOn) {
       unlockiOS();
+      Tone.start(); // Fire and forget
   }
 
   // 2. Proceed without awaiting (Tone.start is handled by unlockiOS resume)
