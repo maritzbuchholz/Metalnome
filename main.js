@@ -33,7 +33,7 @@ function primeAudio() {
       artist: 'BrainStation',
       album: 'Metronome',
       artwork: [
-        { src: './assets/skull.svg', sizes: '512x512', type: 'image/svg+xml' }
+        { src: './assets/skull.png', sizes: '512x512', type: 'image/png' },
       ]
     });
   
