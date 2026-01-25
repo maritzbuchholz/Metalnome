@@ -15,6 +15,21 @@ if (silentAudio) {
 // 2. NoSleep (Keeps App Awake in Background)
 const noSleep = new NoSleep();
 
+function unlockiOS() {
+  // Trigger Silent Audio
+  if(silentAudio) {
+    silentAudio.play().catch(e => console.log("Silent audio failed", e));
+  }
+  
+  // Trigger NoSleep
+  noSleep.enable();
+  
+  // Explicitly resume Tone context if needed
+  if (Tone.context.state !== 'running') {
+    Tone.context.resume();
+  }
+}
+
 
 const grooveList = {
   standard: standard,
@@ -291,13 +306,14 @@ start.addEventListener("click", async (event) => {
   event.preventDefault();
   const selectedGroove = document.querySelector(".metalnome__groove").value;
   
+  // 1. UNLOCK IMMEDIATELY (Synchronous)
   if (!metalnomeOn) {
-      // STARTING: Trigger hacks IMMEDIATELY on user gesture
-      if(silentAudio) silentAudio.play().catch(e => console.log("Audio play failed", e));
-      noSleep.enable();
+      unlockiOS();
   }
 
-  await Tone.start(); //connects to the WebAudio API and enable AudioContext
+  // 2. THEN wait for async setup
+  await Tone.start(); 
+  
   metalnomeOn = !metalnomeOn;
   if (metalnomeOn) {
     grooveList[selectedGroove]();
