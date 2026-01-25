@@ -27,6 +27,27 @@ function primeAudio() {
   // Actually, for silent mode to work, it MUST be playing. 
   // So we let it run. It's silent.
   
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: 'Metalnome',
+      artist: 'BrainStation',
+      album: 'Metronome',
+      artwork: [
+        { src: './assets/skull.svg', sizes: '512x512', type: 'image/svg+xml' }
+      ]
+    });
+  
+    // iOS requires these handlers to enable background audio
+    navigator.mediaSession.setActionHandler('play', () => { 
+        if(silentAudio) silentAudio.play();
+        Tone.Transport.start(); 
+    });
+    navigator.mediaSession.setActionHandler('pause', () => { 
+        if(silentAudio) silentAudio.pause();
+        Tone.Transport.pause();
+    });
+  }
+  
   document.removeEventListener('touchstart', primeAudio);
   document.removeEventListener('click', primeAudio);
 }
