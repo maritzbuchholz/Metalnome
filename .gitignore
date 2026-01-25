@@ -1,2 +1,4 @@
 Drum-Sound-Classifier-master.zip
 node_modules
+dist
+.DS_Store
