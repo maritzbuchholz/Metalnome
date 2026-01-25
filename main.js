@@ -8,7 +8,7 @@ const blinker = document.querySelector(".metalnome__blinker");
 const silentAudio = document.getElementById("silent-audio");
 if (silentAudio) {
   // Use a proper silent MP3 (approx 0.5s silence). This works better than the tiny WAV.
-  silentAudio.src = "data:audio/mp3;base64,//OEAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAEAAABIADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV6urq6urq6urq6urq6urq6urq6urq6urq6v////////////////////////////////8AAAAATGF2YzU2LjQxAAAAAAAAAAAAAAAAJAAAAAAAAAAAASDs90hvAAAAAAAAAAAAAAAAAAAA//MUZAAAAAGkAAAAAAAAA0gAAAAATEFN//MUZAMAAAGkAAAAAAAAA0gAAAAARTMu//MUZAYAAAGkAAAAAAAAA0gAAAAAOTku//MUZAkAAAGkAAAAAAAAA0gAAAAANVVV";
+  silentAudio.src = "./assets/silence.wav";
 }
 
 // 1. PRIME AUDIO ON FIRST TOUCH (Global Unlock)
@@ -47,6 +47,18 @@ function primeAudio() {
         if(silentAudio) silentAudio.pause();
         Tone.Transport.pause();
         navigator.mediaSession.playbackState = "paused";
+    });
+    navigator.mediaSession.setActionHandler('previoustrack', () => {});
+    navigator.mediaSession.setActionHandler('nexttrack', () => {});
+    navigator.mediaSession.setActionHandler('seekbackward', () => {});
+    navigator.mediaSession.setActionHandler('seekforward', () => {});
+    navigator.mediaSession.setActionHandler('stop', () => {
+        if(silentAudio) {
+            silentAudio.pause();
+            silentAudio.currentTime = 0;
+        }
+        stop();
+        navigator.mediaSession.playbackState = "none";
     });
   }
   
