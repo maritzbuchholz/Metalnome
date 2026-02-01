@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const filePath = path.join(process.cwd(), 'public/assets/silence.wav');
-const durationSeconds = 30;
+const durationSeconds = 6;
 const sampleRate = 44100;
 const numChannels = 1;
 const bitsPerSample = 16;
