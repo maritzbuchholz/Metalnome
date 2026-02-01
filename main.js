@@ -13,8 +13,8 @@ if (silentAudio) {
 
 // 1. PRIME AUDIO ON FIRST TOUCH (Global Unlock)
 function primeAudio() {
-  if (Tone.BaseContext.state !== 'running') {
-    Tone.BaseContext.resume();
+  if (Tone.context.state !== 'running') {
+    Tone.context.resume();
   }
   
   if(silentAudio) {
@@ -45,7 +45,7 @@ function primeAudio() {
     });
     navigator.mediaSession.setActionHandler('pause', () => { 
         if(silentAudio) silentAudio.pause();
-        stop();
+        Tone.Transport.pause();
         navigator.mediaSession.playbackState = "paused";
     });
     // Dummy handlers required for iOS lock screen to show the player
