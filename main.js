@@ -40,13 +40,13 @@ function primeAudio() {
     // iOS requires these handlers to enable background audio
     navigator.mediaSession.setActionHandler('play', () => { 
         if(silentAudio) silentAudio.play();
-        Tone.Transport.stop();
         Tone.Transport.start(); 
         navigator.mediaSession.playbackState = "playing";
     });
     navigator.mediaSession.setActionHandler('pause', () => { 
         if(silentAudio) silentAudio.pause();
-        Tone.Transport.pause();
+        // Tone.Transport.pause();
+        Tone.Transport.stop();
         navigator.mediaSession.playbackState = "paused";
     });
     // Dummy handlers required for iOS lock screen to show the player
