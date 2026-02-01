@@ -40,6 +40,7 @@ function primeAudio() {
     // iOS requires these handlers to enable background audio
     navigator.mediaSession.setActionHandler('play', () => { 
         if(silentAudio) silentAudio.play();
+        Tone.Transport.stop();
         Tone.Transport.start(); 
         navigator.mediaSession.playbackState = "playing";
     });
