@@ -90,6 +90,7 @@ const grooveList = {
   breakdown: breakdown,
   windmills: windmills,
   faceripper: faceripper,
+  tresillo: tresillo,
 }
 
 //utilities
