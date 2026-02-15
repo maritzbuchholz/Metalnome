@@ -7,6 +7,7 @@ import slipknot from "./grooves/slipknot";
 import breakdown from "./grooves/breakdown";
 import windmills from "./grooves/windmills";
 import faceripper from "./grooves/faceripper";
+import tresillo from "./grooves/tresillo"
 
 const start = document.querySelector(".metalnome__button");
 const blinker = document.querySelector(".metalnome__blinker");
