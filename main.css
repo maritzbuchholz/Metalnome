@@ -2,10 +2,12 @@
   to {
     opacity: 0;
   }
+
   from {
     opacity: 1;
   }
 }
+
 body {
   display: flex;
   justify-content: center;
@@ -26,38 +28,51 @@ body {
   border-radius: 6px;
   padding: 6rem;
 }
+
 .metalnome__blinker-wrapper {
   width: 333px;
   height: 333px;
 }
+
 .metalnome__title {
   font-family: "Metal Mania", sans-serif;
   font-size: 6rem;
   margin: 0;
   margin-top: -33px;
 }
+
 .metalnome__blinker {
   position: absolute;
   width: inherit;
   height: auto;
   opacity: 0;
 }
+
 .metalnome__blinker--on {
   animation: flash 2s alternate ease-out;
 }
+
 .metalnome__blinker--base {
   position: absolute;
   width: inherit;
   height: auto;
 }
+
 .metalnome__button {
   border: red 1px solid;
   border-radius: 5px;
+  font-family: "Science Gothic", sans-serif;
+  font-size: 1rem;
+  color: red;
+  background-color: black;
 }
+
 .metalnome__input-wrapper {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
 }
+
 .metalnome__bpm {
   font-family: "Science Gothic", sans-serif;
   width: 60%;
@@ -68,17 +83,20 @@ body {
   background-color: black;
   color: red;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
+
 .metalnome__bpm::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .metalnome__bpm::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .metalnome__groove {
   font-family: "Science Gothic", sans-serif;
   width: 60%;
@@ -88,4 +106,6 @@ body {
   border-radius: 5px;
   background-color: black;
   color: red;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
