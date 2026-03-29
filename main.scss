@@ -6,12 +6,6 @@ $trasition-time: 2s;
   }
 }
 
-@mixin desktop {
-  @media screen and (min-width: 1200px) {
-    @content;
-  }
-}
-
 @keyframes flash {
   to {
     opacity: 0;
@@ -40,17 +34,21 @@ body {
     flex-direction: column;
     border: red 1px solid;
     border-radius: 6px;
-    padding: 6rem;
+    padding: 3rem;
   }
   &__blinker-wrapper {
-    width: 333px;
-    height: 333px;
+    width: 300px;
+    height: 300px;
   }
   &__title {
     font-family: "Metal Mania", sans-serif;
-    font-size: 6rem;
+    font-size: 4rem;
     margin: 0;
     margin-top: -33px;
+  }
+  &__description {
+    font-size: 0.9rem;
+    text-align: center;
   }
   &__blinker {
     position: absolute;
@@ -68,11 +66,17 @@ body {
   }
   &__button{
     border: red 1px solid;
-    border-radius: 5px; 
+    border-radius: 5px;
+    background-color: black;
+    color: red;
+    font-family: "Science Gothic", sans-serif;
+    font-size: 0.9rem;
   }
   &__input-wrapper{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
   }
   &__bpm {
     font-family: "Science Gothic", sans-serif;
