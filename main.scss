@@ -116,14 +116,17 @@ body {
   &__bpm {
     font-family: "Science Gothic", sans-serif;
     width: 60%;
-    padding-left: 4px;
+    padding-left: 8px;
     box-sizing: border-box;
     border: red 1px solid;
     border-radius: 5px;
     background-color: black;
     color: red;
     appearance: none;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    @include tablet{
+      font-size: 0.8rem;
+    }
   }
   &__bpm::-webkit-inner-spin-button{
     -webkit-appearance: none;
