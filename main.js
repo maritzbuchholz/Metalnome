@@ -11,6 +11,7 @@ import tresillo from "./grooves/tresillo"
 
 const start = document.querySelector(".metalnome__button");
 const blinker = document.querySelector(".metalnome__blinker");
+const bpm = document.getElementById("bpm");
 
 // 1. Silent Loop (Bypasses Silent Switch & Keeps App Alive)
 const silentAudio = document.getElementById("silent-audio");
@@ -38,7 +39,7 @@ function primeAudio() {
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({
       title: 'Metalnome',
-      artist: 'Metalnome',
+      artist: bpm.value,
       album: 'Metalnome',
       artwork: [
         { src: './assets/skull.png', sizes: '512x512', type: 'image/png' },
