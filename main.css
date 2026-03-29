@@ -35,10 +35,22 @@ body {
   font-size: 4rem;
   margin: 0;
   margin-top: -33px;
+  display: none;
+}
+@media screen and (min-width: 760px) {
+  .metalnome__title {
+    display: inline-block;
+  }
 }
 .metalnome__description {
   font-size: 0.9rem;
   text-align: center;
+  display: none;
+}
+@media screen and (min-width: 760px) {
+  .metalnome__description {
+    display: inline-block;
+  }
 }
 .metalnome__blinker {
   position: absolute;

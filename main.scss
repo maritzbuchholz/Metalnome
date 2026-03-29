@@ -45,10 +45,18 @@ body {
     font-size: 4rem;
     margin: 0;
     margin-top: -33px;
+    display: none;
+    @include tablet{
+      display: inline-block;
+    }
   }
   &__description {
     font-size: 0.9rem;
     text-align: center;
+    display: none;
+    @include tablet{
+      display: inline-block;
+    }
   }
   &__blinker {
     position: absolute;
