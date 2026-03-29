@@ -53,14 +53,6 @@ body {
       border: red 1px solid;
     }
   }
-  &__blinker-wrapper {
-    width: 200px;
-    height: 200px;
-    @include mobile {
-      width: 300px;
-      height: 300px;
-    }
-  }
   &__title {
     font-family: "Metal Mania", sans-serif;
     font-size: 4rem;
@@ -77,6 +69,18 @@ body {
     display: none;
     @include tablet{
       display: inline-block;
+    }
+  }
+  &__blinker-wrapper {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 3rem;
+    @include mobile {
+      width: 300px;
+      height: 300px;
+    }
+    @include tablet{
+      margin-bottom: 1rem;
     }
   }
   &__blinker {
@@ -119,7 +123,7 @@ body {
     background-color: black;
     color: red;
     appearance: none;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   &__bpm::-webkit-inner-spin-button{
     -webkit-appearance: none;
@@ -134,7 +138,7 @@ body {
   &__groove{
     font-family: "Science Gothic", sans-serif;
     width: 60%;
-    padding-left: 1px;
+    padding-left: 4px;
     box-sizing: border-box;
     border: red 1px solid;
     border-radius: 5px;
