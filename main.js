@@ -10,7 +10,7 @@ import tresillo from "./grooves/tresillo"
 const start = document.querySelector(".metalnome__button");
 const blinker = document.querySelector(".metalnome__blinker");
 const bpm = document.getElementById("bpm");
-const click = "Click play to start on lock screen"
+const click = "Click play"
 
 // 1. Silent Loop (Bypasses Silent Switch & Keeps App Alive)
 const silentAudio = document.getElementById("silent-audio");
