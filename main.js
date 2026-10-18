@@ -5,12 +5,12 @@ import blastBeat from "./grooves/blastBeat";
 import motorhead from "./grooves/motorhead";
 import slipknot from "./grooves/slipknot";
 import breakdown from "./grooves/breakdown";
-import tresillo from "./grooves/tresillo"
+import tresillo from "./grooves/tresillo";
+import quads from "./grooves/quads";
 
 const start = document.querySelector(".metalnome__button");
 const blinker = document.querySelector(".metalnome__blinker");
 const bpm = document.getElementById("bpm");
-const division = document.getElementById("division");
 const click = "Click play"
 
 // 1. Silent Loop (Bypasses Silent Switch & Keeps App Alive)
@@ -91,6 +91,7 @@ const grooveList = {
   slipknot: slipknot,
   breakdown: breakdown,
   tresillo: tresillo,
+  quads: quads,
 }
 
 //utilities
