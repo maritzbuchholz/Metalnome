@@ -136,7 +136,8 @@ body {
   -webkit-appearance: none;
   margin: 0;
 }
-.metalnome__groove {
+.metalnome__groove,
+.metalnome__division {
   font-family: "Science Gothic", sans-serif;
   width: 60%;
   padding-left: 4px;
