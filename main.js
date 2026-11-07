@@ -94,6 +94,34 @@ const grooveList = {
   quads: quads,
 }
 
+// These grooves have a fixed division, so lock the division dropdown to that
+// value while one is selected and restore the user's choice when they switch away.
+const lockedDivisions = {
+  blast: "16",
+  motor: "16",
+  slipknot: "16",
+  breakdown: "16",
+  tresillo: "8",
+};
+const grooveSelect = document.getElementById("groove");
+const divisionSelect = document.getElementById("division");
+let savedDivision = divisionSelect.value;
+
+function syncDivisionToGroove() {
+  const locked = lockedDivisions[grooveSelect.value];
+  if (locked) {
+    if (!divisionSelect.disabled) savedDivision = divisionSelect.value;
+    divisionSelect.value = locked;
+    divisionSelect.disabled = true;
+  } else if (divisionSelect.disabled) {
+    divisionSelect.disabled = false;
+    divisionSelect.value = savedDivision;
+  }
+}
+
+grooveSelect.addEventListener("change", syncDivisionToGroove);
+syncDivisionToGroove(); // handles browsers restoring a locked groove on page reload
+
 //utilities
 
 function stop() {

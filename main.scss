@@ -150,4 +150,10 @@ body {
     background-color: black;
     color: red;
   }
+  &__division:disabled {
+    border-color: grey;
+    color: grey;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }

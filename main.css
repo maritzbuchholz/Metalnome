@@ -146,4 +146,10 @@ body {
   border-radius: 5px;
   background-color: black;
   color: red;
+}
+.metalnome__division:disabled {
+  border-color: grey;
+  color: grey;
+  cursor: not-allowed;
+  opacity: 0.6;
 }/*# sourceMappingURL=main.css.map */
