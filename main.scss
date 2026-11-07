@@ -42,8 +42,12 @@ body {
 
 .metalnome {
   &__wrapper {
-    display: flex;
-    flex-direction: column;
+    // mobile: three equal rows. blinker centred in the top third, controls
+    // centred in the middle third (= vertical centre of the screen), bottom third empty
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    height: 100%;
     border: none;
     border-radius: 6px;
     padding: 0 1.5rem;
@@ -51,9 +55,18 @@ body {
     width: 100%;
     align-items: center;
     @include tablet{
+      display: flex;
+      flex-direction: column;
+      height: auto;
       width: auto;
       padding: 3rem;
       border: red 1px solid;
+    }
+  }
+  &__controls {
+    width: 100%;
+    @include tablet{
+      display: contents; // desktop: act as if the group isn't there
     }
   }
   &__title {
@@ -75,12 +88,11 @@ body {
     }
   }
   &__blinker-wrapper {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 3rem;
+    width: 112.5px;
+    height: 112.5px;
     @include mobile {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
     }
     @include tablet{
       width: 300px;
@@ -110,6 +122,9 @@ body {
     font-family: "Science Gothic", sans-serif;
     font-size: 1.25rem;
     width: 100%;
+    @include mobile{
+      font-size: 1.5rem;
+    }
     @include tablet{
       font-size: 1rem;
     }
@@ -121,6 +136,9 @@ body {
     margin-bottom: 0.5rem;
     font-size: 1.25rem;
     width: 100%;
+    @include mobile{
+      font-size: 1.5rem;
+    }
     @include tablet{
       font-size: 1rem;
     }
@@ -136,6 +154,9 @@ body {
     color: red;
     appearance: none;
     font-size: 1rem;
+    @include mobile{
+      font-size: 1.25rem;
+    }
     @include tablet{
       font-size: 0.8rem;
       padding-left: 8px;
@@ -162,6 +183,9 @@ body {
     background-color: black;
     color: red;
     font-size: 1rem;
+    @include mobile{
+      font-size: 1.25rem;
+    }
     @include tablet{
       font-size: 13.3333px; // browser default for selects, keeps desktop unchanged
     }
