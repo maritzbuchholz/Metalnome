@@ -46,9 +46,12 @@ body {
     flex-direction: column;
     border: none;
     border-radius: 6px;
-    padding: 0;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    width: 100%;
     align-items: center;
     @include tablet{
+      width: auto;
       padding: 3rem;
       border: red 1px solid;
     }
@@ -72,14 +75,16 @@ body {
     }
   }
   &__blinker-wrapper {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 3rem;
     @include mobile {
-      width: 300px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
     }
     @include tablet{
+      width: 300px;
+      height: 300px;
       margin-bottom: 1rem;
     }
   }
@@ -103,15 +108,22 @@ body {
     background-color: black;
     color: red;
     font-family: "Science Gothic", sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     width: 100%;
+    @include tablet{
+      font-size: 1rem;
+    }
   }
   &__input-wrapper{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
     width: 100%;
+    @include tablet{
+      font-size: 1rem;
+    }
   }
   &__bpm {
     font-family: "Science Gothic", sans-serif;
@@ -123,7 +135,7 @@ body {
     background-color: black;
     color: red;
     appearance: none;
-    font-size: 0.7rem;
+    font-size: 1rem;
     @include tablet{
       font-size: 0.8rem;
       padding-left: 8px;
@@ -149,6 +161,10 @@ body {
     border-radius: 5px;
     background-color: black;
     color: red;
+    font-size: 1rem;
+    @include tablet{
+      font-size: 13.3333px; // browser default for selects, keeps desktop unchanged
+    }
   }
   &__division:disabled {
     border-color: grey;
