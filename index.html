@@ -22,31 +22,33 @@
             <img class="metalnome__blinker--base" src="./assets/brokenheartgrey.svg" alt="broken heart time keeper">
             <img class="metalnome__blinker" src="./assets/brokenheart.svg" alt="broken heart time keeper">
         </div>
-        <div class="metalnome__input-wrapper">
-            <label class="metalnome__groove-label" for="style">Groove</label>
-            <select class="metalnome__groove" type="number" name="groove" id="groove">
-                <option value="standard">Straight Up</option>
-                <option value="blast">BLAST BEAT!</option>
-                <option value="motor">Motorhead</option>
-                <option value="slipknot">Slipknot</option>
-                <option value="breakdown">BREAKDOWN</option>
-                <option value="tresillo">Tresillo</option>
-                <option value="quads">Quad Fills</option>
-            </select>
-        </div>
-        <div class="metalnome__input-wrapper">
-            <label class="metalnome__division-label" for="division">Division</label>
-            <select class="metalnome__division" name="division" id="division">
-                <option value="8">Eighth Notes</option>
-                <option value="16">Sixteenth Notes</option>
-            </select>
-        </div>
-        <div class="metalnome__input-wrapper">
-            <label class="metalnome__bpm-label" for="bpm">BPM</label>
-            <input class="metalnome__bpm" type="number" name="bpm" id="bpm">
-        </div>
+        <div class="metalnome__controls">
+            <div class="metalnome__input-wrapper">
+                <label class="metalnome__groove-label" for="style">Groove</label>
+                <select class="metalnome__groove" type="number" name="groove" id="groove">
+                    <option value="standard">Straight Up</option>
+                    <option value="blast">BLAST BEAT!</option>
+                    <option value="motor">Motorhead</option>
+                    <option value="slipknot">Slipknot</option>
+                    <option value="breakdown">BREAKDOWN</option>
+                    <option value="tresillo">Tresillo</option>
+                    <option value="quads">Quad Fills</option>
+                </select>
+            </div>
+            <div class="metalnome__input-wrapper">
+                <label class="metalnome__division-label" for="division">Division</label>
+                <select class="metalnome__division" name="division" id="division">
+                    <option value="8">Eighth Notes</option>
+                    <option value="16">Sixteenth Notes</option>
+                </select>
+            </div>
+            <div class="metalnome__input-wrapper">
+                <label class="metalnome__bpm-label" for="bpm">BPM</label>
+                <input class="metalnome__bpm" type="number" name="bpm" id="bpm">
+            </div>
 
-        <button class="metalnome__button">Play</button>
+            <button class="metalnome__button">Play</button>
+        </div>
     </section>
     <audio id="silent-audio" loop hidden></audio> <!-- iOS silence hack -->
 </body>

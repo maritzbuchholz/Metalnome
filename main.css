@@ -27,17 +27,33 @@ body {
 }
 
 .metalnome__wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  height: 100%;
   border: none;
   border-radius: 6px;
-  padding: 0;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
   align-items: center;
 }
 @media screen and (min-width: 760px) {
   .metalnome__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
     padding: 3rem;
     border: red 1px solid;
+  }
+}
+.metalnome__controls {
+  width: 100%;
+}
+@media screen and (min-width: 760px) {
+  .metalnome__controls {
+    display: contents;
   }
 }
 .metalnome__title {
@@ -63,18 +79,19 @@ body {
   }
 }
 .metalnome__blinker-wrapper {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 3rem;
+  width: 112.5px;
+  height: 112.5px;
 }
 @media screen and (min-width: 360px) {
   .metalnome__blinker-wrapper {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
   }
 }
 @media screen and (min-width: 760px) {
   .metalnome__blinker-wrapper {
+    width: 300px;
+    height: 300px;
     margin-bottom: 1rem;
   }
 }
@@ -98,15 +115,36 @@ body {
   background-color: black;
   color: red;
   font-family: "Science Gothic", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   width: 100%;
+}
+@media screen and (min-width: 360px) {
+  .metalnome__button {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .metalnome__button {
+    font-size: 1rem;
+  }
 }
 .metalnome__input-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   width: 100%;
+}
+@media screen and (min-width: 360px) {
+  .metalnome__input-wrapper {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .metalnome__input-wrapper {
+    font-size: 1rem;
+  }
 }
 .metalnome__bpm {
   font-family: "Science Gothic", sans-serif;
@@ -120,7 +158,12 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  font-size: 0.7rem;
+  font-size: 1rem;
+}
+@media screen and (min-width: 360px) {
+  .metalnome__bpm {
+    font-size: 1.25rem;
+  }
 }
 @media screen and (min-width: 760px) {
   .metalnome__bpm {
@@ -146,4 +189,23 @@ body {
   border-radius: 5px;
   background-color: black;
   color: red;
+  font-size: 1rem;
+}
+@media screen and (min-width: 360px) {
+  .metalnome__groove,
+  .metalnome__division {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .metalnome__groove,
+  .metalnome__division {
+    font-size: 13.3333px;
+  }
+}
+.metalnome__division:disabled {
+  border-color: grey;
+  color: grey;
+  cursor: not-allowed;
+  opacity: 0.6;
 }/*# sourceMappingURL=main.css.map */
