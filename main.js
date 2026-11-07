@@ -124,11 +124,17 @@ syncDivisionToGroove(); // handles browsers restoring a locked groove on page re
 
 //utilities
 
+// button reads "Pause" while the metalnome is running, "Play" otherwise
+function updateButtonLabel() {
+  start.textContent = metalnomeOn ? "Pause" : "Play";
+}
+
 function stop() {
   metalnomeOn = false;
+  updateButtonLabel();
   // Disable hacks
   if(silentAudio) silentAudio.pause();
-  
+
   Tone.Transport.stop();
   Tone.Transport.cancel();
   Tone.Draw.cancel();
@@ -164,6 +170,7 @@ start.addEventListener(triggerEvent, (event) => {
   // 2. Proceed without awaiting (Tone.start is handled by unlockiOS resume)
   
   metalnomeOn = !metalnomeOn;
+  updateButtonLabel();
   if (metalnomeOn) {
     grooveList[selectedGroove](metalnomeOn);
     if ('mediaSession' in navigator) navigator.mediaSession.playbackState = "playing";
