@@ -7,6 +7,7 @@ import slipknot from "./grooves/slipknot";
 import breakdown from "./grooves/breakdown";
 import tresillo from "./grooves/tresillo";
 import quads from "./grooves/quads";
+import faceripper from "./grooves/faceripper";
 
 const start = document.querySelector(".metalnome__button");
 const blinker = document.querySelector(".metalnome__blinker");
@@ -92,6 +93,7 @@ const grooveList = {
   breakdown: breakdown,
   tresillo: tresillo,
   quads: quads,
+  faceripper: faceripper,
 }
 
 // These grooves have a fixed division, so lock the division dropdown to that
@@ -102,6 +104,7 @@ const lockedDivisions = {
   slipknot: "16",
   breakdown: "16",
   tresillo: "8",
+  faceripper: "8",
 };
 const grooveSelect = document.getElementById("groove");
 const divisionSelect = document.getElementById("division");
@@ -124,11 +127,17 @@ syncDivisionToGroove(); // handles browsers restoring a locked groove on page re
 
 //utilities
 
+// button reads "Pause" while the metalnome is running, "Play" otherwise
+function updateButtonLabel() {
+  start.textContent = metalnomeOn ? "Pause" : "Play";
+}
+
 function stop() {
   metalnomeOn = false;
+  updateButtonLabel();
   // Disable hacks
   if(silentAudio) silentAudio.pause();
-  
+
   Tone.Transport.stop();
   Tone.Transport.cancel();
   Tone.Draw.cancel();
@@ -164,6 +173,7 @@ start.addEventListener(triggerEvent, (event) => {
   // 2. Proceed without awaiting (Tone.start is handled by unlockiOS resume)
   
   metalnomeOn = !metalnomeOn;
+  // updateButtonLabel();
   if (metalnomeOn) {
     grooveList[selectedGroove](metalnomeOn);
     if ('mediaSession' in navigator) navigator.mediaSession.playbackState = "playing";
